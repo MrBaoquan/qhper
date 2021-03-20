@@ -14,10 +14,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/MrBaoquan/qhper.git"
     },
     "bugs": "",
-    "homepage": "",
+    "homepage": "https://github.com/MrBaoquan/qhper",
     "engines": {
         "node": ">= 8.9.0",
         "npm": ">= 5.6.0",

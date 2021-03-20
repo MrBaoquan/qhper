@@ -1,0 +1,26 @@
+{
+    "name": "quasar-app-extension-qhper",
+    "version": "0.0.2",
+    "description": "A Quasar App Extension",
+    "author": "mrbaoquan <mrma617@gmail.com>",
+    "license": "MIT",
+    "main": "./src/index.js",
+    "scripts": {
+        "test": "echo \"No test specified\" && exit 0"
+    },
+    "files": [
+        "src",
+        "!test"
+    ],
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bugs": "",
+    "homepage": "",
+    "engines": {
+        "node": ">= 8.9.0",
+        "npm": ">= 5.6.0",
+        "yarn": ">= 1.6.0"
+    }
+}

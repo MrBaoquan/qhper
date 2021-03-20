@@ -1,0 +1,7 @@
+{
+  "qhper": {
+    "apiServer": "http://quasarapp.com",
+    "authWXMPUrl": "http://quasarapp.com/proxy/auth/wxmp",
+    "fetchUserRoute": "/api/auth/user"
+  }
+}

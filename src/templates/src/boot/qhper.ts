@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { boot } from 'quasar/wrappers';
+import { boot } from "quasar/wrappers";
 
 export interface User {
     id: number;
@@ -14,21 +14,21 @@ export interface QHper {
     user: () => User;
 }
 
-declare module 'vue/types/vue' {
-    interface Vue {
+declare module "@vue/runtime-core" {
+    interface ComponentCustomProperties {
         $qhper: QHper;
     }
 }
 
-export default boot(({ Vue, store }) => {
+export default boot(({ app, store }) => {
     // 组织qhper实例
     const qhper: QHper = {
-        user: () => store.getters['qhper/user'],
+        user: () => store.getters["qhper/user"],
     };
 
     // 组织用户基本信息
-    store.commit('qhper/assembleUser', (data: User) => data);
+    store.commit("qhper/assembleUser", (data: User) => data);
 
     // 注入qhper实例
-    Vue.prototype.$qhper = qhper;
+    app.config.globalProperties.$qhper = qhper;
 });

@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { boot } from 'quasar/wrappers';
-import axios, { AxiosError, AxiosInstance } from 'axios';
-import qs from 'qs';
+import { boot } from "quasar/wrappers";
+import axios, { AxiosError, AxiosInstance } from "axios";
+import qs from "qs";
 
-declare module 'vue/types/vue' {
-    interface Vue {
+declare module "@vue/runtime-core" {
+    interface ComponentCustomProperties {
         $axios: AxiosInstance;
     }
 }
 
 const axiosInstance: AxiosInstance = axios.create({
     paramsSerializer: (params) => {
-        return qs.stringify(params, { arrayFormat: 'repeat' });
+        return qs.stringify(params, { arrayFormat: "repeat" });
     },
-    baseURL: 'http://quasarapp.com',
+    baseURL: "http://quasarapp.com",
 });
 
 const setErrorInterceptor = (errorFunction: () => void) => {
@@ -31,12 +31,13 @@ const setErrorInterceptor = (errorFunction: () => void) => {
     );
 };
 
+// 设置baseURL
 const setBaseURL = (baseURL: string) => {
     axiosInstance.defaults.baseURL = baseURL;
 };
 
 export { axiosInstance, setErrorInterceptor, setBaseURL };
-export default boot(({ Vue, store }) => {
+export default boot(({ app, store }) => {
     axiosInstance.interceptors.response.use(
         function (response) {
             return response;
@@ -45,11 +46,11 @@ export default boot(({ Vue, store }) => {
             // Any status codes that falls outside the range of 2xx cause this function to trigger
             // Do something with response error
             if (error.response.status === 401) {
-                store.dispatch('qhper/redirect2Auth');
+                store.dispatch("qhper/redirect2Auth").catch(null);
             }
             return Promise.reject(error);
         }
     );
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    Vue.prototype.$axios = axiosInstance;
+    app.config.globalProperties.$axios = axiosInstance;
 });

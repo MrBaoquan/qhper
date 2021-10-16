@@ -11,7 +11,7 @@ A Quasar App Extension
 
 # Install
 ```bash
-quasar ext add qhper
+quasar ext add @mrbaoquan/qhper
 ```
 Quasar CLI will retrieve it from the NPM registry and install the extension to your project.
 
@@ -21,7 +21,7 @@ Quasar CLI will retrieve it from the NPM registry and install the extension to y
 
 # Uninstall
 ```bash
-quasar ext remove qhper
+quasar ext remove @mrbaoquan/qhper
 ```
 
 # Info

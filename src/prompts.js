@@ -49,11 +49,11 @@ module.exports = function () {
             default: "http://quasarapp.com",
         },
         {
-            name: "authWXMPUrl",
+            name: "authWxmpRoute",
             type: "input",
             require: false,
-            message: "Auth wechat media platform redirect url",
-            default: "http://quasarapp.com/proxy/auth/wxmp",
+            message: "Auth wechat media platform redirect route",
+            default: "/proxy/auth/wxmp",
         },
         {
             name: "fetchUserRoute",

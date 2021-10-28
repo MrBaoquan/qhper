@@ -5,8 +5,9 @@ import { SucceedResponse, URLModifyQueries } from "../utils";
 
 const TOKEN_KEY = "authorization_token";
 const AUTH_REDIRECT_KEY = "authorization_redirect";
-const AUTH_WECHAT_URL = prompts["qhper"].authWXMPUrl;
-const FETCH_USER_ROUTE = prompts["qhper"].fetchUserRoute;
+const API_SERVER = prompts["@mrbaoquan/qhper"].apiServer;
+const AUTH_WECHAT_URL = API_SERVER+prompts["@mrbaoquan/qhper"].authWxmpRoute;
+const FETCH_USER_ROUTE = prompts["@mrbaoquan/qhper"].fetchUserRoute;
 
 // 授权后跳转的连接地址
 export const getAuthRedirectUrl = () => {

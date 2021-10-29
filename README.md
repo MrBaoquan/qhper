@@ -1,13 +1,7 @@
 Quasar App Extension qhper
 ===
 
-_Be sure to change this readme as appropriate for your app extension._
-
-_Think about the organization of this file and how the information will be beneficial to the user._
-
-> Add a short description of your App Extension. What does it do? How is it beneficial? Why would someone want to use it?
-
-A Quasar App Extension
+quick start a quasar app, auth with larahper (laravel package)
 
 # Install
 ```bash
@@ -24,11 +18,7 @@ Quasar CLI will retrieve it from the NPM registry and install the extension to y
 quasar ext remove @mrbaoquan/qhper
 ```
 
-# Info
-> Add longer information here that will help the user of your app extension.
-
-# Other Info
-> Add other information that's not as important to know
-
-# Donate
-If you appreciate the work that went into this App Extension, please consider [donating to Quasar](https://donate.quasar.dev).
+# ENV files
+- .env will be always loaded
+- .env.development will be loaded while run `quasar dev`
+- .env.production will be loaded while run `quasar build`

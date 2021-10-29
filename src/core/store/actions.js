@@ -2,10 +2,10 @@ import { axiosInstance } from "boot/axios";
 import { Cookies, LocalStorage } from "quasar";
 import prompts from "app/quasar.extensions.json";
 import { SucceedResponse, URLModifyQueries } from "../utils";
-
 const TOKEN_KEY = "authorization_token";
 const AUTH_REDIRECT_KEY = "authorization_redirect";
-const API_SERVER = prompts["@mrbaoquan/qhper"].apiServer;
+
+const API_SERVER = process.env.API_SERVER;
 const AUTH_WECHAT_URL = API_SERVER+prompts["@mrbaoquan/qhper"].authWxmpRoute;
 const FETCH_USER_ROUTE = prompts["@mrbaoquan/qhper"].fetchUserRoute;
 

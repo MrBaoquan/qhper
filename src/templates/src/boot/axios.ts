@@ -14,7 +14,7 @@ const axiosInstance: AxiosInstance = axios.create({
   paramsSerializer: (params) => {
     return qs.stringify(params, { arrayFormat: 'repeat' });
   },
-  baseURL: '<%= prompts.apiServer %>',
+  baseURL: process.env.API_SERVER,
 });
 
 const setErrorInterceptor = (errorFunction: () => void) => {

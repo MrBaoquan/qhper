@@ -9,8 +9,14 @@
 const path = require('path');
 
 const extendWithComponent = (conf) => {
-    conf.boot.push('~quasar-app-extension-qhper/src/boot/index.js');
+    conf.boot.push('~@mrbaoquan/quasar-app-extension-qhper/src/boot/index.js');
     conf.boot.push('qhper');
+    
+    Object.assign(conf.build.env,
+            require('dotenv').config({path:'.env'}).parsed,
+            require('dotenv').config({path:`.env.${process.env.NODE_ENV}`}).parsed
+        );
+
     const requiredPlugins = [
         'Loading',
         'Notify',
@@ -33,5 +39,5 @@ module.exports = function (api) {
     //
     api.chainWebpack((chain) => chainWebpack(api.ctx, chain));
     api.extendQuasarConf(extendWithComponent);
-    console.warn('ext index.js');
+    console.log('@mrbaoquan/qhper started...');
 };

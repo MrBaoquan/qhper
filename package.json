@@ -1,6 +1,6 @@
 {
     "name": "@mrbaoquan/quasar-app-extension-qhper",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Simple Auth with Larahper",
     "author": "mrbaoquan <mrma617@gmail.com>",
     "license": "MIT",
